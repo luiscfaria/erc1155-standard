@@ -1,11 +1,11 @@
 const hre = require("hardhat");
 
 async function main() {
-  let ERC1155 = await ethers.getContractFactory("ERC1155");
-  ERC1155 = await ERC1155.deploy();
+  let FariaToken = await ethers.getContractFactory("FariaToken");
+  FariaToken = await FariaToken.deploy();
 
-  await ERC1155.deployed();
-  console.log("ERC1155 Contract deployed to:", ERC1155.address);
+  await FariaToken.deployed();
+  console.log("FariaToken Contract deployed to:", FariaToken.address);
 }
 
 main().catch((error) => {

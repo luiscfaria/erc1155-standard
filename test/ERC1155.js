@@ -16,11 +16,17 @@ describe("Faria Token", function () {
 
   describe("Deployment", function () {
     it("Should Deploy Contract", async function () {
-      ERC1155 = await ethers.getContractFactory("ERC1155");
-      ERC1155 = await ERC1155.deploy();
-      await ERC1155.deployed();
+      FariaToken = await ethers.getContractFactory("FariaToken");
+      FariaToken = await FariaToken.deploy();
+      await FariaToken.deployed();
+    });
+
+    it("Should Mint as Minter", async function () {
+      FariaToken = await ethers.getContractFactory("FariaToken");
+      FariaToken = await FariaToken.deploy();
+      await FariaToken.deployed();
+
+      expect(FariaToken.mint(addr1.address, 1, 1, ""));
     });
   });
-
-  
 });
