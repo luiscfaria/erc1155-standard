@@ -1,9 +1,11 @@
+import { Contract } from "ethers";
+
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
 const { BigNumber } = require("ethers");
 
 describe("Faria Token", function () {
-  let FariaToken;
+  let FariaToken: Contract;
   let users, owner, addr1, addr2;
 
   before(async () => {
@@ -11,7 +13,6 @@ describe("Faria Token", function () {
     owner = users[0];
     addr1 = users[1];
     addr2 = users[2];
-    addr3 = users[3];
   });
 
   beforeEach(async () => {
